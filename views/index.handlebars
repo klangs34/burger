@@ -1,0 +1,18 @@
+<div id="main" style="margin: auto;">
+{{#each burgers}}
+    {{#unless devoured}}
+    <li>
+        {{this.burger_name}}
+        {{> isDevoured }}
+    </li>
+
+    {{/unless}} 
+{{/each}}
+    <form id="my-form">
+        <input type="text" id="burger" name="burger" col=30 rows=30 />
+        <button id="my-button">
+            Add Burger
+        </button>
+    </form>
+
+</div>
