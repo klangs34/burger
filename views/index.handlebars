@@ -1,18 +1,36 @@
-<div id="main" style="margin: auto;">
-{{#each burgers}}
-    {{#unless devoured}}
-    <li>
-        {{this.burger_name}}
-        {{> isDevoured }}
-    </li>
+<div class="nav">
+    Welcome to Burger Indulgence!
+</div>
+<div class="img">
+    <img src="/img/burger.jfif" alt="juicy burger">
+</div>
+<div class="container">
+    <div id="primary">
+    {{#each burgers}}
+        {{#unless devoured}}
+        <li id="added">
+            {{this.burger_name}}
+            {{> isDevoured }}
+        </li>
 
-    {{/unless}} 
-{{/each}}
-    <form id="my-form">
-        <input type="text" id="burger" name="burger" col=30 rows=30 />
-        <button id="my-button">
-            Add Burger
-        </button>
-    </form>
-
+        {{/unless}} 
+    {{/each}}
+        <form id="my-form">
+            <input type="text" id="burger" name="burger" col=30 rows=30 />
+            <button id="my-button">
+                Add Burger
+            </button>
+        </form>
+    </div>
+    <div id="secondary">
+        {{#each burgers}}
+            {{#if devoured}}
+            <ol>
+                <li id="eaten">
+                    {{this.burger_name}} eaten!
+                </li>
+            </ol>
+            {{/if}} 
+        {{/each}}
+    </div>
 </div>
