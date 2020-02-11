@@ -16,7 +16,7 @@
         {{/unless}} 
     {{/each}}
         <form id="my-form">
-            <input type="text" id="burger" name="burger" col=30 rows=30 />
+            <input type="text" id="burger" name="burger" col=30 rows=30 placeholder="Enter Burger Name"/>
             <button id="my-button">
                 Add Burger
             </button>
@@ -25,11 +25,11 @@
     <div id="secondary">
         {{#each burgers}}
             {{#if devoured}}
-            <ol>
-                <li id="eaten">
+            <ul id="eaten" style="list-style-type: none">
+               <li>
                     {{this.burger_name}} eaten!
-                </li>
-            </ol>
+               </li>  
+            </ul>
             {{/if}} 
         {{/each}}
     </div>
