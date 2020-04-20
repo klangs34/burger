@@ -1,23 +1,22 @@
-<div class="nav">
-    Welcome to Burger Indulgence!
+<div class="navbar navbar-dark bg-dark justify-content-center h1 text-white m-0">
+    Welcome to Burger Indulgence! 
 </div>
-<div class="img">
-    <img src="/img/burger.jfif" alt="juicy burger">
-</div>
-<div class="container">
+<div class="container mt-4 d-flex justify-content-between" >
     <div id="primary">
     {{#each burgers}}
         {{#unless devoured}}
-        <li id="added">
+        <ul class="list-group mb-4">
+            <li class="list-group-item" id="added">
             {{this.burger_name}}
             {{> isDevoured }}
         </li>
-
+    </ul>
+        
         {{/unless}} 
     {{/each}}
-        <form id="my-form">
-            <input type="text" id="burger" name="burger" col=30 rows=30 placeholder="Enter Burger Name"/>
-            <button id="my-button">
+        <form class="form-group" id="my-form">
+            <input type="text" class="form-control mb-2" id="burger" name="burger" col=30 rows=30 placeholder="Enter Burger Name"/>
+            <button class="btn btn-info" id="my-button">
                 Add Burger
             </button>
         </form>
@@ -25,8 +24,8 @@
     <div id="secondary">
         {{#each burgers}}
             {{#if devoured}}
-            <ul id="eaten" style="list-style-type: none">
-               <li>
+            <ul class="list-group" id="eaten">
+               <li class="list-group-item bg-dark text-white text-center">
                     {{this.burger_name}} eaten!
                </li>  
             </ul>
